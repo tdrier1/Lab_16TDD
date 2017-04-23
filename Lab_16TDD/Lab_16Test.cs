@@ -11,30 +11,22 @@ namespace Lab_16TDD
 
         public static bool PrimeTest(int num1)
         {
-            if (num1 == 0 || num1 == 1)
-            {
-                Console.WriteLine(num1 + " is not prime number");
-                return false;
-            }
-            else
-            {
-                for (int a = 2; a <= num1 / 2; a++)
+            //actual math being done to check if the number is prime
+            if (num1 == 0) return false;
+            if (num1 == 1) return false;
+
+            for (int i = 2; i < num1; i++)
+                if (num1 % i == 0)
                 {
-                    if (num1 % a == 0)
-                    {
-                        Console.WriteLine(num1 + " is not prime number");
-                        return false;
-                    }
-
+                    return false;
                 }
-                Console.WriteLine(num1 + " is a prime number");
-                return true;
-
-            }
-
-            }
+            return true;
         }
-    }       
+
+
+
+    }
+}       
 
 
 
